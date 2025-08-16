@@ -1,0 +1,160 @@
+{
+  "info": {
+    "name": "Library API",
+    "_postman_id": "f75c2f78-3a9e-4b76-a92c-000000000001",
+    "description": "Postman collection for CODE81 Library API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Books",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic {{basicAuth}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/books",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Member",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic {{basicAuth}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstName\": \"Omar\", \"lastName\": \"Mahmoud\", \"email\": \"omar@example.com\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/members",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "members"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Borrow Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic {{basicAuth}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bookId\": 1, \"memberId\": 1, \"days\": 14}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/librarian/transactions/borrow",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "librarian",
+            "transactions",
+            "borrow"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Return Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic {{basicAuth}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"transactionId\": 1}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/librarian/transactions/return",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "librarian",
+            "transactions",
+            "return"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Users (ADMIN)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic {{basicAuth}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/admin/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "users"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "basicAuth",
+      "value": "YWRtaW46YWRtaW4xMjM="
+    }
+  ]
+}

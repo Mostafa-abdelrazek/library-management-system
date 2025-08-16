@@ -1,0 +1,1 @@
+-- Optional explicit schema if needed

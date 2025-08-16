@@ -1,0 +1,1 @@
+package com.code81.library.repository; import com.code81.library.entity.UserActivityLog; import org.springframework.data.jpa.repository.JpaRepository; public interface UserActivityLogRepository extends JpaRepository<UserActivityLog, Long> {}
